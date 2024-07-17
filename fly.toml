@@ -1,0 +1,14 @@
+app = "ollama-xp"
+primary_region = "ord"
+vm.size = "a100-40gb"
+
+[env]
+  PORT = 11434
+
+[http_service]
+  internal_port = 11434
+  force_https = false
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]

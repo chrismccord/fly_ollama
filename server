@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export OLLAMA_HOST="[$FLY_PRIVATE_IP]:$PORT"
+
+# start ollama in the background
+ollama serve > /dev/null 2>&1 &
+
+# Wait until ollama service is running
+echo "Waiting for ollama on $OLLAMA_HOST..."
+until curl -s "http://$OLLAMA_HOST" > /dev/null; do
+  echo "Waiting for ollama on $OLLAMA_HOST..."
+  sleep 1
+done
+
+# run the model
+ollama run llama2:7b
+
+echo "Running llama2:7b on $OLLAMA_HOST..."
+# Keep the script running
+sleep infinity
