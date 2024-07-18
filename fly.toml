@@ -3,7 +3,7 @@ primary_region = "ord"
 vm.size = "a100-40gb"
 
 [env]
-  PORT = 11434
+  PORT = "11434"
 
 [http_service]
   internal_port = 11434
