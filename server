@@ -1,12 +1,13 @@
 #!/bin/bash
 
-export OLLAMA_HOST="[$FLY_PRIVATE_IP]:$PORT"
+export OLLAMA_HOST="[0000:0000:0000:0000:0000:0000:0000:0000]:$PORT"
+export OLLAMA_DEBUG=1
 
 # start ollama in the background
+echo "Waiting for ollama on $OLLAMA_HOST..."
 ollama serve > /dev/null 2>&1 &
 
 # Wait until ollama service is running
-echo "Waiting for ollama on $OLLAMA_HOST..."
 until curl -s "http://$OLLAMA_HOST" > /dev/null; do
   echo "Waiting for ollama on $OLLAMA_HOST..."
   sleep 1
