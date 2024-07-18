@@ -1,7 +1,5 @@
 #!/bin/bash
-
 export OLLAMA_HOST="[0000:0000:0000:0000:0000:0000:0000:0000]:$PORT"
-export OLLAMA_DEBUG=1
 
 # start ollama in the background
 echo "Waiting for ollama on $OLLAMA_HOST..."
