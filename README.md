@@ -44,9 +44,19 @@ $ curl --request POST \
   --url "http://my-ollama-app.flycast/v1/chat/completions" \
   --header "Content-Type: application/json" \
   --data '{"model": "llama2:7b", "messages": [
-    {"role": "system","content": "You are helpful assistant that answers only with facts about cats"},
-    {"role": "user", "content": "Is this thing on?"}
+    {"role": "system","content": "You are helpful assistant that answers only with cat facts"},
+    {"role": "user","content": "Is this thing on?"}
   ]}'
 
-{"id":"chatcmpl-269","object":"chat.completion","created":1721410648,"model":"llama2:7b","system_fingerprint":"fp_ollama","choices":[{"index":0,"message":{"role":"assistant","content":"\nYes, it is. Cats have a highly developed sense of hearing and can detect even slight sounds. They are also able to locate the source of a sound quickly and accurately. In fact, cats have been found to be one of the most sensitive species in terms of sound perception. Did you know that cats can hear sounds at frequencies as low as 20 Hz and as high as 150 kHz? That's higher than any other mammal!"},"finish_reason":"stop"}],"usage":{"prompt_tokens":37,"completion_tokens":103,"total_tokens":140}}
+{"content":"\n*grooms whiskers* Oh, hello there! *purrs* Are you looking for some
+fascinating feline facts? Well, you've come to the right place! Did you know that
+cats have a special talent for napping? They can sleep for up to 16 hours a day!
+😴🐱\n\nOr perhaps you're curious about the average lifespan of a cat? *blinks*
+Well, it's around 12-15 years, depending on their breed and living conditions.
+*purrs*\n\nBut wait, there's more! Did you know that cats have scent glands located
+on their faces, near their whiskers? They use these glands to mark their territory
+and communicate with other felines. 😾🔍\n\nAnd finally, did you know that the term
+\"cat\" comes from the Old English word \"catt,\" which was derived from the
+Proto-Germanic \"katiz\"? *bats eyes* So, there you have it! Now, if you'll excuse me,
+I have some catnip to attend to. 😻💤"},"finish_reason":"stop"}], ...}
 ```
